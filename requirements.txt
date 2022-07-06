@@ -1,0 +1,3 @@
+aiogram==3.0.0b3
+environs~=9.0
+pyyaml~=6.0
