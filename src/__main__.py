@@ -5,6 +5,8 @@ from aiogram import Bot, Dispatcher
 from src.config import load_config, BASE_DIR
 from src.core.events import on_shutdown, on_startup
 from src.core.logging import configure_logging
+from src.routers import emoji, greeting
+from src.services.emoji_service import load_emojis
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +16,8 @@ def register_middlewares(dp: Dispatcher) -> None:
 
 
 def register_routers(dp: Dispatcher) -> None:
-    pass
+    dp.include_router(greeting.router)
+    dp.include_router(emoji.router)
 
 
 def register_filters(dp: Dispatcher) -> None:
@@ -35,6 +38,11 @@ def main() -> None:
     register_middlewares(dp)
     register_filters(dp)
     register_routers(dp)
+
+    emojis = load_emojis(BASE_DIR / "kaomojis.txt")
+
+    dp["config"] = config
+    dp["emojis"] = emojis
 
     dp.run_polling(bot)
 
