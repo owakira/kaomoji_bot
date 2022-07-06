@@ -1,5 +1,5 @@
 from aiogram import Router
-from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import Message
 from aiogram.utils.markdown import hlink
 
 from src.keyboards.inline.greeting_keyboard import greeting_keyboards
