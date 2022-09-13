@@ -2,7 +2,7 @@ import logging
 
 from aiogram import Bot, Dispatcher
 
-from src.config import BASE_DIR, load_config
+from src.config.config import BASE_DIR, load_config
 from src.core.events import on_shutdown, on_startup
 from src.core.logging import configure_logging
 from src.routers import emoji, greeting
@@ -25,8 +25,8 @@ def register_filters(dp: Dispatcher) -> None:
 
 
 def main() -> None:
-    config = load_config(BASE_DIR / ".env")
-    configure_logging(BASE_DIR / "log_config.yml")
+    config = load_config(BASE_DIR / "src" / "config" / ".env")
+    configure_logging(BASE_DIR / "src" / "config" / "log_config.yml")
 
     bot = Bot(config.bot.token, parse_mode="HTML")
 

@@ -2,7 +2,7 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
-from src.config import BASE_DIR, BotConfig, Config, load_config
+from src.config.config import BASE_DIR, BotConfig, Config, load_config
 
 
 def test_load_config() -> None:

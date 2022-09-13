@@ -1,4 +1,4 @@
-from src.config import BASE_DIR
+from src.config.config import BASE_DIR
 from src.services.emoji_service import load_emojis
 
 

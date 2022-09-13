@@ -1,6 +1,6 @@
 import logging
 
-from src.config import BASE_DIR
+from src.config.config import BASE_DIR
 from src.core.logging import configure_logging
 
 
