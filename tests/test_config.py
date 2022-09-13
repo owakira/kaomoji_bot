@@ -1,7 +1,8 @@
-import pytest
 from dataclasses import FrozenInstanceError
 
-from src.config import BASE_DIR, load_config, Config, BotConfig
+import pytest
+
+from src.config import BASE_DIR, BotConfig, Config, load_config
 
 
 def test_load_config() -> None:

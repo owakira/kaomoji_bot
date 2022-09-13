@@ -5,17 +5,6 @@ router = Router()
 
 
 def insert_emoji_into_text(text: str, emoji: str) -> str:
-    """
-    Inserts emoji into text
-    Insert start if text starts with ',' symbol
-    else insert end
-    :param text: Text to which want to insert
-    :type text: str
-    :param emoji: Emoji to insert
-    :type emoji: str
-    :return: Text with inserted emoji
-    :rtype: str
-    """
     if text.startswith(","):
         return f"{emoji} {text[1:]}"
     return f"{text} {emoji}"
@@ -35,6 +24,6 @@ async def check(query: InlineQuery, emojis: list[str]) -> None:
                     message_text=text_with_emoji,
                     parse_mode="",
                 ),
-            )
+            ),
         )
     await query.answer(result, cache_time=0)
