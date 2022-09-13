@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 from environs import Env
 
-BASE_DIR = pathlib.Path(__file__).parent.parent
+BASE_DIR = pathlib.Path(__file__).parent.parent.parent
 
 
 @dataclass(frozen=True)
