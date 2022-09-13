@@ -16,6 +16,6 @@ async def greet_user(message: Message) -> None:
         "",
         "Примечание: Чтобы добавить эмодзи в начало, начните сообщение запятой (,)",
         "",
-        f"Исходный код доступен на {hlink('Github', 'https://github.com/e1leet/kaomoji_bot')}"
+        f"Исходный код доступен на {hlink('Github', 'https://github.com/e1leet/kaomoji_bot')}",
     ]
     await message.answer("\n".join(text), reply_markup=greeting_keyboards)

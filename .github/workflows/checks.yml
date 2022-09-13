@@ -3,7 +3,7 @@ name: Run checks
 on: [ pull_request, push ]
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,3 +21,5 @@ jobs:
           pip install -r dev_requirements.txt
       - name: Run tests
         run: pytest tests
+      - name: Run flake8
+        run: flake8

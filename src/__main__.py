@@ -2,7 +2,7 @@ import logging
 
 from aiogram import Bot, Dispatcher
 
-from src.config import load_config, BASE_DIR
+from src.config import BASE_DIR, load_config
 from src.core.events import on_shutdown, on_startup
 from src.core.logging import configure_logging
 from src.routers import emoji, greeting

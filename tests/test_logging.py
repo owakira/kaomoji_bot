@@ -16,12 +16,12 @@ def test_configure_logging_return() -> None:
                 "class": "logging.StreamHandler",
                 "level": "INFO",
                 "formatter": "default",
-                "stream": "ext://sys.stdout"
-            }
+                "stream": "ext://sys.stdout",
+            },
         },
         "loggers": {
-            "root": {"level": "INFO", "handlers": ["console"], "propagate": False}
-        }
+            "root": {"level": "INFO", "handlers": ["console"], "propagate": False},
+        },
     }
     loaded_config = configure_logging(BASE_DIR / "tests" / "log_config_example.yml")
 
