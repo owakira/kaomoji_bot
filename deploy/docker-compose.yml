@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  bot:
+    build:
+      context: ../
+      dockerfile: deploy/Dockerfile
+    env_file: ../src/config/.env
+    restart: unless-stopped
+    stop_signal: SIGINT
